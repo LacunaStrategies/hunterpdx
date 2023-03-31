@@ -50,7 +50,7 @@ const socialItems = [
         title: 'Connect with Dustin Hunter on LinkedIn',
         icon: '',
     },
-] 
+]
 
 const Header = () => {
 
@@ -61,37 +61,46 @@ const Header = () => {
     }
 
     return (
-        <header>
-            <div className={styles.container}>
-                {/* Header Logo Image */}
-                <div>
-                    <Image src="/assets/images/dustin-hunter-circle-profile-small.png" alt="Small circle profile picture of Dustin Hunter" height={70} width={70} />
-                </div>
-
-                {/* Mobile Nav Toggle */}
-                <div>
-                    <button onClick={() => toggleNav()} aria-label="Toggle mobile navigation menu">
-                        |||
-                    </button>
-                </div>
-
-                {/* Nav Menu */}
-                <nav>
-                    {/* Close Mobile Nav Button */}
-                    <button onClick={() => toggleNav()} aria-label="Toggle mobile navigation menu">
-                        X
-                    </button>
-
-                    {/* Nav Top - Mobile Only */}
+        <header className={styles.header}>
+            <div className="container">
+                <div className={styles.navWrapper}>
+                    {/* Header Logo Image */}
                     <div>
                         <Image src="/assets/images/dustin-hunter-circle-profile-small.png" alt="Small circle profile picture of Dustin Hunter" height={70} width={70} />
-                        <p>Skill and Passion Combined</p>
                     </div>
-                    {/* END Nav Top */}
 
-                    {/* Nav Main */}
-                    <div>
-                        <ul>
+                    {/* Mobile Nav Toggle */}
+                    <div className={styles.navToggle}>
+                        <button onClick={() => toggleNav()} aria-label="Toggle mobile navigation menu">
+                            |||
+                        </button>
+                    </div>
+
+                    {/* Nav Overlay - Mobile Only */}
+                    <div
+                        onClick={() => toggleNav()}
+                        className={`${styles.mobileOverlay} ${showMenu ? styles.open : ''}`}
+                    ></div>
+                    
+                    {/* Nav Menu */}
+                    <nav className={showMenu ? `${styles.open}` : ''}>
+                        <div className={styles.mobileNavTop}>
+                            {/* Nav Top - Mobile Only */}
+                            <Image src="/assets/images/dustin-hunter-circle-profile-small.png" alt="Small circle profile picture of Dustin Hunter" height={70} width={70} />
+
+                            {/* Close Mobile Nav Button */}
+                            <button
+                                className={styles.closeNav}
+                                onClick={() => toggleNav()} aria-label="Toggle mobile navigation menu">
+                                X
+                            </button>
+                            <p>Skill and Passion Combined</p>
+                        </div>
+
+                        {/* END Nav Top */}
+
+                        {/* Nav Main */}
+                        <ul className={styles.navList}>
                             {
                                 navItems.map(item => (
                                     <li key={item.label}>
@@ -100,25 +109,25 @@ const Header = () => {
                                 ))
                             }
                         </ul>
-                    </div>
-                    {/* END Nav Main */}
+                        {/* END Nav Main */}
 
-                    {/* Nav Bottom - Mobile Only */}
-                    <div>
-                        <div>Connect on Social</div>
-                        <ul>
-                            {
-                                socialItems.map(item => (
-                                    <li key={item.label}>
-                                        <Link href={item.path} title={item.title} target="_blank" rel="noreferrer">
-                                            {item.icon}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </nav>
+                        {/* Nav Bottom - Mobile Only */}
+                        <div className={styles.mobileNavBottom}>
+                            <div className={styles.heading}>Connect on Social</div>
+                            <ul className={styles.socialList}>
+                                {
+                                    socialItems.map(item => (
+                                        <li key={item.label}>
+                                            <Link href={item.path} title={item.title} target="_blank" rel="noreferrer">
+                                                {item.icon}
+                                            </Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </header>
     )

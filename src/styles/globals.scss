@@ -1,17 +1,65 @@
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-primary: #DCDCDC;
   --background-end-rgb: 255, 255, 255;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --theme-primary: #ff014f;
+    --foreground-light: #c4cfde;
+    --background-light: #212428;
+    --background-dark: #191b1e;
+    --background-gradient-1: linear-gradient(145deg, #1e2024, #23272b);
+    --line-ghost: rgba(255,255,255,0.1);
   }
 }
 
+body, html {
+  font-family: var(--font-primary);
+  color: var(--foreground-light);
+  background-color: var(--background-light);
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--foreground-light)
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media(min-width: 576px) {
+    max-width: 546px
+  }
+
+  @media(min-width: 768px) {
+    max-width: 768px
+  }
+
+  @media(min-width: 992px) {
+    max-width: 992px;
+  }
+
+  @media(min-width: 1200px) {
+    max-width: 1200px;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   html {

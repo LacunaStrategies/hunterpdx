@@ -1,0 +1,114 @@
+header {
+    .navWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navToggle {
+            @media(min-width: 768px) {
+                display: none;
+            }
+        }
+
+        .mobileOverlay {
+            transition: all 500ms;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            visibility: hidden;
+
+            &.open {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            @media(min-width: 768px) {
+                display: none;
+            }
+        }
+
+        nav {
+            transition: all 500ms;
+            position: fixed;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            width: 20rem;
+            background: var(--background-dark);
+            padding: 0.75rem;
+            overflow-y: auto;
+
+            &.open {
+                left: 0;
+            }
+
+            .mobileNavTop {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 1.25rem;
+                border-bottom: 1px solid var(--line-ghost);
+
+                @media(min-width: 768px) {
+                    display: none;
+                }
+
+                .closeNav {
+                    background: var(--background-gradient-1);
+                    color: var(--theme-primary);
+                    font-size: 1rem;
+                    border-radius: 50%;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+
+                p {
+                    width: 100%;
+                    margin-top: 1.25rem;
+                }
+            }
+
+            .navList {
+                margin-top: 1.25rem;
+                list-style: none;
+                padding-left: 0;
+                text-transform: uppercase;
+
+                li {
+                    a {
+                        margin: 1rem 0;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .mobileNavBottom {
+                margin-top: 6.25rem;
+                padding-top: 1.25rem;
+                padding-bottom: 1.25rem;
+                border-top: 1px solid var(--line-ghost);
+
+                @media(min-width: 768px) {
+                    display: none;
+                }
+
+                .heading {
+                    text-transform: uppercase;
+                }
+
+                .socialList {
+                    list-style: none;
+                    padding-left: 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
