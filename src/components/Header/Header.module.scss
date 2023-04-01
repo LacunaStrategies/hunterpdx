@@ -4,8 +4,15 @@ header {
         align-items: center;
         justify-content: space-between;
 
+        @media(min-width: 992px) {
+            padding: 1rem 0;
+        }
+
         .navToggle {
-            @media(min-width: 768px) {
+            font-size: 2rem;
+            color: var(--theme-primary);
+
+            @media(min-width: 992px) {
                 display: none;
             }
         }
@@ -26,7 +33,7 @@ header {
                 visibility: visible;
             }
 
-            @media(min-width: 768px) {
+            @media(min-width: 992px) {
                 display: none;
             }
         }
@@ -38,12 +45,22 @@ header {
             top: 0;
             bottom: 0;
             width: 20rem;
-            background: var(--background-dark);
-            padding: 0.75rem;
+            background: var(--background-1);
+            padding: 1.5rem 2.5rem;
             overflow-y: auto;
 
             &.open {
                 left: 0;
+            }
+
+            @media(min-width: 992px) {
+                position: relative;
+                left: auto;
+                top: auto;
+                bottom: auto;
+                width: auto;
+                background: transparent;
+                padding: 0.75rem;
             }
 
             .mobileNavTop {
@@ -54,7 +71,7 @@ header {
                 padding-bottom: 1.25rem;
                 border-bottom: 1px solid var(--line-ghost);
 
-                @media(min-width: 768px) {
+                @media(min-width: 992px) {
                     display: none;
                 }
 
@@ -69,7 +86,9 @@ header {
 
                 p {
                     width: 100%;
-                    margin-top: 1.25rem;
+                    margin-top: 1.5rem;
+                    font-weight: 400;
+                    color: var(--foreground-2);
                 }
             }
 
@@ -79,10 +98,26 @@ header {
                 padding-left: 0;
                 text-transform: uppercase;
 
+                @media(min-width: 992px) {
+                    display: flex;
+                }
+
                 li {
                     a {
+                        transition: color 300ms;
                         margin: 1rem 0;
                         display: inline-block;
+                        color: var(--foreground-1);
+
+                        @media(min-width: 992px) {
+                            margin: 0px 1rem;
+                        }
+
+                        &.active,
+                        &:hover,
+                        &:focus {
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -93,20 +128,67 @@ header {
                 padding-bottom: 1.25rem;
                 border-top: 1px solid var(--line-ghost);
 
-                @media(min-width: 768px) {
+                @media(min-width: 992px) {
                     display: none;
                 }
 
                 .heading {
                     text-transform: uppercase;
+                    letter-spacing: 0.125rem;
+                    font-weight: 500;
+                    font-size: 0.875rem;
                 }
 
                 .socialList {
                     list-style: none;
                     padding-left: 0;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: flex-start;
                     align-items: center;
+
+                    li {
+                        transition: transform 500ms;
+                        position: relative;
+                        margin-right: 1rem;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background: var(--background-gradient-2);
+                            border-radius: var(--rounded-sm);
+                        }
+
+                        &:hover {
+                            transform: translateY(-0.25rem)
+                        }
+
+                        a {
+                            position: relative;
+                            transition: all 500ms;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: var(--background-2);
+                            border-radius: var(--rounded-sm);
+                            height: 3.25rem;
+                            width: 3.25rem;
+                            font-size: 1.25rem;
+
+
+
+                            &:hover {
+                                background: transparent;
+                            }
+
+                            svg {
+                                position: relative;
+                            }
+                        }
+                    }
                 }
             }
         }

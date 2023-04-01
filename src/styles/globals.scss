@@ -1,41 +1,52 @@
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-primary: #DCDCDC;
-  --background-end-rgb: 255, 255, 255;
+  --theme-primary: #ff014f;
+  --foreground-1: #000;
+  --background-2: #fff;
+  --background-1: #ccc;
+  --background-gradient-1: linear-gradient(145deg, #1e2024, #23272b);
+  --background-gradient-2: linear-gradient(to right bottom, #212428, #16181c);
+  --line-ghost: rgba(255, 255, 255, 0.1);
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Montserrat', sans-serif;
+  --rounded-sm: 0.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-primary: #ff014f;
-    --foreground-light: #c4cfde;
-    --background-light: #212428;
-    --background-dark: #191b1e;
+    --foreground-1: #c4cfde;
+    --foreground-2: #878e99;
+    --background-2: #212428;
+    --background-1: #191b1e;
     --background-gradient-1: linear-gradient(145deg, #1e2024, #23272b);
-    --line-ghost: rgba(255,255,255,0.1);
+    --background-gradient-2: linear-gradient(to right bottom, #212428, #16181c);
+    --line-ghost: rgba(255, 255, 255, 0.1);
   }
 }
 
-body, html {
+body,
+html {
   font-family: var(--font-primary);
-  color: var(--foreground-light);
-  background-color: var(--background-light);
+  color: var(--foreground-1);
+  background-color: var(--background-2);
+  scroll-behavior: smooth
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 a {
   text-decoration: none;
-  color: var(--foreground-light)
+  color: var(--foreground-1)
 }
 
 .container {
@@ -58,6 +69,10 @@ a {
 
   @media(min-width: 1200px) {
     max-width: 1200px;
+  }
+
+  @media(min-width: 1440px) {
+    max-width: 1440px;
   }
 }
 
