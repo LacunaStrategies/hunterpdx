@@ -1,4 +1,10 @@
-header {
+.header {
+    position: absolute;
+    top: 0;
+    z-index: 30;
+    width: 100%;
+    transition: 300ms;
+
     .navWrapper {
         display: flex;
         align-items: center;
@@ -41,10 +47,10 @@ header {
         nav {
             transition: all 500ms;
             position: fixed;
-            left: -100%;
+            left: -400px;
             top: 0;
             bottom: 0;
-            width: 20rem;
+            width: 100%;
             background: var(--background-1);
             padding: 1.5rem 2.5rem;
             overflow-y: auto;
@@ -53,6 +59,9 @@ header {
                 left: 0;
             }
 
+            @media(min-width: 420px) {
+                width: 20rem;
+            }
             @media(min-width: 992px) {
                 position: relative;
                 left: auto;

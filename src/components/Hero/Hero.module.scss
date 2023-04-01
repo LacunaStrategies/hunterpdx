@@ -1,0 +1,181 @@
+.hero {
+    padding-top: 6.25rem;
+    position: relative;
+
+    @media(min-width: 992px) {
+        padding-top: 9.5rem;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 80rem;
+        border-bottom: 1px solid var(--line-ghost);
+        margin: 0 auto;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 6.25rem;
+
+        .profileImage {
+            position: relative;
+
+            @media(min-width: 992px) {
+                padding: 0 1rem;
+                width: calc(40% - 2rem);
+                order: 2;
+            }
+
+            &:before {
+                position: absolute;
+                content: '';
+                height: calc(100% - 8.25rem);
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: var(--shadow-1);
+                border-radius: var(--rounded-md);
+                background: var(--background-gradient-1);
+                bottom: 0.25rem;
+                width: 100%;
+                z-index: 0;
+            }
+
+            img {
+                position: relative;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .content {
+            margin-top: 3.25rem;
+
+            @media(min-width: 992px) {
+                padding: 0 1rem;
+                width: calc(60% - 2rem);
+                order: 1;
+            }
+
+            .subHeading {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 500;
+                font-size: 0.875rem;
+                font-family: var(--font-secondary);
+                margin-bottom: 1.25rem;
+            }
+
+            .primaryHeading {
+                font-size: 2rem;
+                font-weight: 700;
+                font-family: var(--font-secondary);
+                line-height: 2.5rem;
+                margin-bottom: 1.25rem;
+                color: #fff;
+
+                span {
+                    color: var(--theme-primary);
+                }
+
+                @media(min-width: 480px) {
+                    font-size: 3.125rem;
+                    line-height: 3.875rem;
+                }
+            }
+
+            p {
+                margin-bottom: 2.5rem;
+                line-height: 1.875rem;
+                font-weight: 400;
+            }
+
+            .showcase {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+
+                .showcaseBlock {
+                    width: 100%;
+                    margin-bottom: 2rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    @media(min-width: 576px) {
+                        width: calc(50% - 2rem);
+                        margin-bottom: 0;
+                    }
+
+                    .showcaseHeading {
+                        text-transform: uppercase;
+                        font-size: 0.875rem;
+                        letter-spacing: 0.125rem;
+                    }
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        list-style: none;
+                        padding-left: 0;
+
+                        li {
+                            transition: transform 500ms;
+                            position: relative;
+                            margin-right: 1rem;
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                background: var(--background-gradient-2);
+                                border-radius: var(--rounded-sm);
+                            }
+
+                            &:hover {
+                                transform: translateY(-0.25rem)
+                            }
+
+
+
+                            a {
+                                position: relative;
+                                transition: all 500ms;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background: var(--background-gradient-1);
+                                box-shadow: var(--shadow-1);
+                                border-radius: var(--rounded-sm);
+                                height: 3.75rem;
+                                width: 3.75rem;
+                                font-size: 1.25rem;
+
+
+
+                                &:hover {
+                                    background: transparent;
+                                }
+
+                                svg {
+                                    position: relative;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,9 @@
-import Header from '@/components/Header'
+// ** NextJS Imports
 import Head from 'next/head'
+
+// ** Component Imports
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
@@ -11,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Hero />
     </>
   )
 }

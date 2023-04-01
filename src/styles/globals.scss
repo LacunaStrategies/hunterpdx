@@ -9,6 +9,7 @@
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Montserrat', sans-serif;
   --rounded-sm: 0.25rem;
+  --rounded-md: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,8 +21,13 @@
     --background-1: #191b1e;
     --background-gradient-1: linear-gradient(145deg, #1e2024, #23272b);
     --background-gradient-2: linear-gradient(to right bottom, #212428, #16181c);
+    --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
     --line-ghost: rgba(255, 255, 255, 0.1);
   }
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body,
@@ -29,7 +35,9 @@ html {
   font-family: var(--font-primary);
   color: var(--foreground-1);
   background-color: var(--background-2);
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 button,
