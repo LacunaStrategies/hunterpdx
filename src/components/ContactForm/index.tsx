@@ -1,4 +1,8 @@
-import { InputHTMLAttributes, useState } from "react"
+// ** React Imports
+import { useState } from "react"
+
+// ** Styles Imports
+import styles from './ContactForm.module.scss'
 
 const ContactForm = () => {
 
@@ -86,10 +90,10 @@ const ContactForm = () => {
     }
 
     return (
-        <div>
+        <div className={styles.contactForm}>
             <form onClick={handleSubmit}>
-                <div>
-                    <div>
+                <div className={styles.formInner}>
+                    <div className={`${styles.formGroup} ${styles.inputName}`}>
                         <label htmlFor="name">Your Name <sup>*</sup></label>
                         <input
                             type="text"
@@ -101,7 +105,7 @@ const ContactForm = () => {
                         />
                         <p>{errors.name && '* Name is a required field!'}</p>
                     </div>
-                    <div>
+                    <div className={`${styles.formGroup} ${styles.inputPhone}`}>
                         <label htmlFor="phone">Phone Number</label>
                         <input
                             type="tel"
@@ -110,8 +114,9 @@ const ContactForm = () => {
                             value={values.phone}
                             onChange={(e) => handleChange(e)}
                         />
+                        <p></p>
                     </div>
-                    <div>
+                    <div className={`${styles.formGroup} ${styles.inputEmail}`}>
                         <label htmlFor="email">Email <sup>*</sup></label>
                         <input
                             type="email"
@@ -123,7 +128,7 @@ const ContactForm = () => {
                         />
                         <p>{errors.email && '* Email is a required field!'}</p>
                     </div>
-                    <div>
+                    <div className={`${styles.formGroup} ${styles.inputSubject}`}>
                         <label htmlFor="subject">Subject</label>
                         <input
                             type="text"
@@ -132,19 +137,22 @@ const ContactForm = () => {
                             value={values.subject}
                             onChange={(e) => handleChange(e)}
                         />
+                        <p></p>
                     </div>
-                    <div>
+                    <div className={`${styles.formGroup} ${styles.inputMessage}`}>
                         <label htmlFor="message">Your Message <sup>*</sup></label>
                         <textarea
                             id="message"
                             name="message"
                             value={values.message}
+                            cols={30}
+                            rows={10}
                             onChange={(e) => handleChange(e)}
                             required
                         ></textarea>
                         <p>{errors.message && '* Message is a required field!'}</p>
                     </div>
-                    <div>
+                    <div className={`${styles.formGroup}  ${styles.submit}`}>
                         <button
                             type="submit"
                             id="submit"

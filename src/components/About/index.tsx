@@ -53,15 +53,17 @@ const About = () => {
                         subTitle='About Me'
                     />
                 </div>
-                <div>
+                <div className={styles.aboutList}>
                     {
                         aboutItems.map((item) => (
-                            <CardIcon
-                                key={item.title}
-                                title={item.title}
-                                icon={item.icon}
-                                content={item.content}
-                            />
+                            <div className={styles.aboutItem} key={item.title}>
+                                <CardIcon
+                                    key={item.title}
+                                    title={item.title}
+                                    icon={item.icon}
+                                    content={item.content}
+                                />
+                            </div>
                         ))
                     }
                 </div>

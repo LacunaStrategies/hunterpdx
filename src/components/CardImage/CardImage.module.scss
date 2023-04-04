@@ -1,0 +1,67 @@
+.card {
+    transition: all 500ms;
+    text-align: left;
+    padding: 1.875rem;
+    border-radius: 1.5rem;
+    background: var(--background-gradient-1);
+    box-shadow: var(--shadow-1);
+
+    .image {
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        border-radius: var(--rounded-md);
+        border: 2px solid var(--theme-primary);
+
+        img {
+            transition: all 500ms;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .category {
+        font-size: 0.75rem;
+        color: var(--theme-primary);
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        transition: all 500ms;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-secondary);
+
+        &:hover {
+            color: var(--theme-primary);
+        }
+
+        svg {
+            transition: font-size 300ms, opacity 300ms, top 300ms;
+            position: relative;
+            top: 0.875rem;
+            margin-left: 0.5rem;
+            font-size: 0;
+            opacity: 0;
+        }
+    }
+
+    &:hover {
+        .image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+        .title {
+            svg {
+                font-size: 1.5rem;
+                opacity: 1;
+                top: 0;
+            }
+        }
+    }
+}

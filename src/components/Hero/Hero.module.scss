@@ -1,5 +1,6 @@
 .hero {
     padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
     position: relative;
 
     @media(min-width: 992px) {
@@ -21,14 +22,13 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-around;
-        padding-bottom: 6.25rem;
+        justify-content: space-between;
 
         .profileImage {
             position: relative;
 
             @media(min-width: 992px) {
-                padding: 0 1rem;
+                padding-left: 1rem;
                 width: calc(40% - 2rem);
                 order: 2;
             }
@@ -58,7 +58,7 @@
             margin-top: 3.25rem;
 
             @media(min-width: 992px) {
-                padding: 0 1rem;
+                padding-right: 1rem;
                 width: calc(60% - 2rem);
                 order: 1;
             }

@@ -8,9 +8,13 @@
     font-weight: 500;
 }
 .title {
-    font-size: 3.75rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.2;
     margin-top: 1rem;
     margin-bottom: 0;
+
+    @media(min-width: 992px) {
+        font-size: 3.75rem;
+    }
 }

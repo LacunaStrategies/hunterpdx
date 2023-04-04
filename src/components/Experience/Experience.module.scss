@@ -1,0 +1,86 @@
+.experience {
+    position: relative;
+    padding: 5rem 0;
+
+    @media(min-width: 992px) {
+        padding: 6.25rem 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 80rem;
+        border-bottom: 1px solid var(--line-ghost);
+        margin: 0 auto;
+    }
+
+    .toggleButtons {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: var(--foreground-1);
+            font-family: var(--font-primary);
+            padding: 1.875rem 0.625rem;
+            text-transform: capitalize;
+            font-size: 1.125rem;
+            font-weight: 500;
+            outline: none;
+            transition: all .5s;
+            background: transparent;
+            border-radius: 0.625rem;
+            background: var(--background-gradient-1);
+            box-shadow: var(--shadow-1);
+
+            &.active,
+            &:hover {
+                color: var(--theme-primary);
+            }
+
+            @media(min-width: 768px) {
+                margin-bottom: 0;
+                width: calc(50% - 3rem);
+            }
+        }
+    }
+
+    .experienceList {
+        padding-left: 1rem;
+        border-left: 0.25rem solid var(--background-1);
+
+        @media(min-width: 576px) {
+            padding-left: 2rem;
+        }
+        .experienceHeading {
+            .years {
+                color: var(--theme-primary);
+                font-size: 0.875;
+                letter-spacing: 0.125rem;
+                font-weight: 500;
+            }
+
+            .heading {
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 3.875rem;
+                margin: 0;
+
+                @media(min-width: 576px) {
+                    font-size: 2.25rem;
+                }
+            }
+        }
+        .experienceCards {
+            margin-bottom: 4rem;
+        }
+    }
+}

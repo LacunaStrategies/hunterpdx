@@ -1,5 +1,6 @@
 :root {
   --theme-primary: #ff014f;
+  --foreground-base: #000;
   --foreground-1: #000;
   --background-2: #fff;
   --background-1: #ccc;
@@ -15,13 +16,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-primary: #ff014f;
+    --foreground-base: #FFF;
+    --foreground-0: #E4E6EA;
     --foreground-1: #c4cfde;
     --foreground-2: #878e99;
-    --background-2: #212428;
     --background-1: #191b1e;
+    --background-2: #212428;
+    --background-3: #1b1c1d;
     --background-gradient-1: linear-gradient(145deg, #1e2024, #23272b);
     --background-gradient-2: linear-gradient(to right bottom, #212428, #16181c);
     --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    --inner-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
     --line-ghost: rgba(255, 255, 255, 0.1);
   }
 }
@@ -38,6 +43,13 @@ html {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  word-break: break-word;
+  font-family: var(--font-secondary);
+  line-height: 1.4074;
+  color: var(--color-heading);
 }
 
 button,
