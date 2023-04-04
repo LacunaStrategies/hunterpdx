@@ -1,6 +1,9 @@
 // ** React Imports
 import { useState } from "react"
 
+// ** React Icons Imports
+import { FiArrowRight } from "react-icons/fi"
+
 // ** Styles Imports
 import styles from './ContactForm.module.scss'
 
@@ -52,8 +55,8 @@ const ContactForm = () => {
     const validateFields = (): boolean => {
         let isValid = true
 
-        if (values.name === '') {
-            setErrors({ ...errors, name: true })
+        if (values.message === '') {
+            setErrors({ ...errors, message: true })
             isValid = false
         }
 
@@ -61,9 +64,8 @@ const ContactForm = () => {
             setErrors({ ...errors, email: true })
             isValid = false
         }
-
-        if (values.message === '') {
-            setErrors({ ...errors, message: true })
+        if (values.name === '') {
+            setErrors({ ...errors, name: true })
             isValid = false
         }
 
@@ -158,7 +160,7 @@ const ContactForm = () => {
                             id="submit"
                             name="submit"
                         >
-                            {loading ? 'Please Wait' : 'Send Message'}
+                            {loading ? 'Please Wait' : <>Send Message <FiArrowRight aria-hidden="true" /></>}
                         </button>
                     </div>
                 </div>
